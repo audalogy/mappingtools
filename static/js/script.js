@@ -27,3 +27,5 @@ function addNewEntry(coord){
 $('#map').on('click', '#save', function() {
     addNewEntry($('#coord').text());
 });
+
+

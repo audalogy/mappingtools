@@ -1,8 +1,13 @@
 #map {
-  height: 600px;
-  width: 60%;
+  height: 400px;
+  width: 100%;
 }
 
 #events {
   display: inline;
+  height: 400px;
+}
+
+#body {
+    padding: 30px;
 }
