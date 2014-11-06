@@ -7,10 +7,10 @@
             <div id="map"></div>
         </div>
         <div class="span2">
+            <button class="btn btn-primary btn-lg" onclick="addMarkerstoMap()">Add Markers to Map</button>
             <!-- Container for annotated events -->
-            <div id="events">
-                <button id="addMarkers" class="btn btn-primary btn-lg" onclick="addMarkerstoMap()">Add Markers to Map</button>
-            </div>
+            <table class="table table-hover table-condensed" id="events">
+            </table>
         </div>
     </div>
 {% endblock %}

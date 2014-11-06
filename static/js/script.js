@@ -1,3 +1,4 @@
+// Create map and add tile layer
 var map = L.map('map').setView([51.505, -0.09], 13);
 
 L.tileLayer('http://{s}.tiles.mapbox.com/v3/gobbledigook.k4k0j8ol/{z}/{x}/{y}.png', {
@@ -5,6 +6,8 @@ L.tileLayer('http://{s}.tiles.mapbox.com/v3/gobbledigook.k4k0j8ol/{z}/{x}/{y}.pn
     maxZoom: 18
 }).addTo(map);
 
+
+// Popup Stuff
 var popup = L.popup();
 
 function onMapClick(e) {
@@ -16,9 +19,13 @@ function onMapClick(e) {
 
 map.on('click', onMapClick);
 
-function addNewEntry(lat){
-    $('#events').append("<p id='coord'>" + lat + "</p>");
-    $('#events').append("<input type='text' placeholder='Event Name'></input>");
+// Add new entries
+function addNewEntry(coord){
+     $('#events').append("<tr>\
+        <td id='coord' class='hide'>" + coord +"</td>\
+        <td><input type='text' placeholder='Event Name'></input></td>\
+        <td><input type='text' placeholder='Date'></input></td>\
+    </tr>");
 }
 
 // The HTML we put in bindPopup doesn't exist yet, so we can't just say
@@ -30,8 +37,8 @@ $('#map').on('click', '#save', function() {
 
 function addMarkerstoMap(){
     $('[id="coord"]').each(function() {
-    //    console.log($(this).text().split(",")[0]);
-        L.marker([$(this).text().split(",")[0],$(this).text().split(",")[1]]).addTo(map);
+        var mrkr = L.marker([$(this).text().split(",")[0],$(this).text().split(",")[1]]).addTo(map);
+        mrkr.bindPopup("<b>Hello world!</b><br />I am a popup.")
     });
 }
 
