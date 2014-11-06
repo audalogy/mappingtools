@@ -10,14 +10,14 @@ var popup = L.popup();
 function onMapClick(e) {
     popup
         .setLatLng(e.latlng)
-        .setContent("<p>You clicked the map at  <span id='coord'>" + e.latlng.toString() + " </span></p><button id='save'>Add Entry Here</button>")
+        .setContent("<p>You clicked the map at  <span id='coord'>" + [e.latlng.lat,e.latlng.lng] + "</span></p><button id='save'>Add Entry Here</button>")
         .openOn(map);
 }
 
 map.on('click', onMapClick);
 
-function addNewEntry(coord){
-    $('#events').append("<p>"+coord+"</p>");
+function addNewEntry(lat){
+    $('#events').append("<p id='coord'>" + lat + "</p>");
     $('#events').append("<input type='text' placeholder='Event Name'></input>");
 }
 
@@ -27,5 +27,12 @@ function addNewEntry(coord){
 $('#map').on('click', '#save', function() {
     addNewEntry($('#coord').text());
 });
+
+function addMarkerstoMap(){
+    $('[id="coord"]').each(function() {
+    //    console.log($(this).text().split(",")[0]);
+        L.marker([$(this).text().split(",")[0],$(this).text().split(",")[1]]).addTo(map);
+    });
+}
 
 
