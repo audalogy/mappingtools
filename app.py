@@ -1,10 +1,7 @@
 #!/usr/bin/env python -tt
 
-from flask import Flask, render_template
-from pymongo import Connection
+from flask import Flask, render_template, redirect
 from flask.ext.pymongo import PyMongo
-import os
-import urlparse
 
 app = Flask(__name__)
 mongo = PyMongo(app)
@@ -107,8 +104,17 @@ def seed_db():
 @app.route('/')
 @app.route('/index')
 def index():
+    mongo.db.app.drop()
+
+    if 'events' not in mongo.db.collection_names():
+        seed_db()
+
     return render_template('index.html'
                            , events = mongo.db.app.find())
+
+@app.route('/authenticate')
+def authenticate():
+    return redirect("https://accounts.google.com/o/oauth2/auth", code=302)
 
 @app.route('/present/<ObjectId:event_id>')
 def present(event_id):
@@ -132,8 +138,3 @@ def js_testing():
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
-
-    mongo.db.app.drop()
-
-    if 'events' not in mongo.db.collection_names():
-        seed_db()
