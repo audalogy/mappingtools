@@ -33,8 +33,8 @@ def seed_db():
                     'date':
                         {
                             'date_type': 'datetime',
-                            'start': '09-07-1940 14:55:00',
-                            'end': ''
+                            'start_date': '09-07-1940 14:55:00',
+                            'end_date': ''
                         },
                     'image':
                         {
@@ -59,8 +59,8 @@ def seed_db():
                     'date':
                         {
                             'date_type': 'datetime range',
-                            'start': '09-07-1940 23:59:00',
-                            'end': '09-07-1940 24:00:00'
+                            'start_date': '09-07-1940 23:59:00',
+                            'end_date': '09-07-1940 24:00:00'
                         },
                     'image':
                         {
@@ -85,8 +85,8 @@ def seed_db():
                    'date':
                        {
                            'date_type': 'datetime',
-                           'start': '10-14-1940 20:00:00',
-                           'end': ''
+                           'start_date': '10-14-1940 20:00:00',
+                           'end_date': ''
                        },
                    'image':
                        {
@@ -105,14 +105,14 @@ def seed_db():
     mongo.db.app.insert(SEED_DATA)
 
 @app.route('/')
-def homepage():
+@app.route('/index')
+def index():
     return render_template('index.html'
                            , events = mongo.db.app.find())
 
-@app.route('/present/<event_id>')
+@app.route('/present/<ObjectId:event_id>')
 def present(event_id):
-    event = mongo.db.app.find_one_or_404({'_id': "ObjectId('546292df59690548c264b796')"})
-    # event = mongo.db.app.find()
+    event = mongo.db.app.find_one_or_404(event_id)
     return render_template('present.html'
                            , event = event)
 

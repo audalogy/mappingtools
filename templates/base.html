@@ -17,10 +17,9 @@
   </head>
 
   <body>
-
     <div class="masthead">
       <ul class="nav nav-pills pull-right">
-        <li class="active"><a href="s#">Create Map</a></li>
+        <li class="active"><a href="{{ url_for('index') }}">Home</a></li>
         <li><a href="#">Present</a></li>
         <li><a href="#">About</a></li>
       </ul>
@@ -29,8 +28,5 @@
       {% block content %}{% endblock %}
     </div>
   </body>
-
-  <footer>
-  </footer>
 
 </html>
