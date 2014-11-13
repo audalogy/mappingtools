@@ -27,3 +27,18 @@ visibility: hidden
      z-index: -1000;
      overflow: hidden;
 }
+
+.masthead {
+  padding-top: 20px;
+  padding-right: 30px; 
+}
+
+.row {
+  padding-left: 40px;
+}
+
+h3 {
+  padding-left: 20px;
+  color: #0066FF;
+}
+
