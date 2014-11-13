@@ -120,6 +120,16 @@ def present(event_id):
 def create():
     return render_template('create.html')
 
+# Laura
+@app.route('/map')
+def map():
+    return render_template('map.html')
+
+# Audrey
+@app.route('/js_testing')
+def js_testing():
+    return render_template('js_testing.html')
+
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
 
