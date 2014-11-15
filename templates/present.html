@@ -6,20 +6,11 @@
             <!-- Container for map -->
             <div id="map"></div>
         </div>
-        <div class="span2">
-            {% for m in event.marker %}
-                <div>
-                    <h3>{{ m.marker_name }}</h3>
-                    <p>{{ m.date.start_date }}{{ m.date.end_date }}</p>
-                    <p>{{ m.marker_description }}</p>
-                </div>
-            {% endfor %}
-            <!-- Container for annotated events -->
-            <table class="table table-hover table-condensed" id="events">
-            </table>
+        <div class="span2" id="events">
+            <button>Awesome</button>
         </div>
     </div>
     <!-- JS file needs to be after the map div -->
     <script type="text/javascript" src="../static/js/script.js"></script>
-
+    <script type="text/javascript" src="../static/js/ajax_script.js"></script>
 {% endblock %}

@@ -112,14 +112,20 @@ def index():
     return render_template('index.html'
                            , events = mongo.db.app.find())
 
-@app.route('/authenticate')
-def authenticate():
-    return redirect("https://accounts.google.com/o/oauth2/auth", code=302)
+# @app.route('/authenticate')
+# def authenticate():
+#     return redirect("https://accounts.google.com/o/oauth2/auth", code=302)
 
 @app.route('/present/<ObjectId:event_id>')
 def present(event_id):
     event = mongo.db.app.find_one_or_404(event_id)
     return render_template('present.html'
+                           , event = event)
+
+@app.route('/data/<ObjectId:event_id>')
+def data(event_id):
+    event = mongo.db.app.find_one_or_404(event_id)
+    return render_template('data.html'
                            , event = event)
 
 @app.route('/create')
