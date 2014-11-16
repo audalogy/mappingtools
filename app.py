@@ -1,7 +1,8 @@
 #!/usr/bin/env python -tt
 
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, jsonify
 from flask.ext.pymongo import PyMongo
+from bson.json_util import dumps
 
 app = Flask(__name__)
 mongo = PyMongo(app)
@@ -125,8 +126,7 @@ def present(event_id):
 @app.route('/data/<ObjectId:event_id>')
 def data(event_id):
     event = mongo.db.app.find_one_or_404(event_id)
-    return render_template('data.html'
-                           , event = event)
+    return dumps(event)
 
 @app.route('/create')
 def create():
