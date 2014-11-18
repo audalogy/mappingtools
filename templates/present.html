@@ -6,11 +6,28 @@
             <!-- Container for map -->
             <div id="map"></div>
         </div>
-        <div class="span2" id="events">
-            <button>Awesome</button>
+        <div class="span4" id="events">
+
+            <div class="accordion" id="accordion">
+                {% for marker in event.marker %}
+                  <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#{{ marker.marker_order }}">
+                        {{ marker.marker_name }}
+                      </a>
+                    </div>
+                    <div id="{{ marker.marker_order }}" class="accordion-body collapse">
+                      <div class="accordion-inner">
+                        {{ marker.date.start_date }}<br>
+                        {{ marker.marker_description }}
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+            </div>
+
         </div>
     </div>
     <!-- JS file needs to be after the map div -->
     <script type="text/javascript" src="../static/js/script.js"></script>
-    <script type="text/javascript" src="../static/js/ajax_script.js"></script>
 {% endblock %}
