@@ -42,3 +42,8 @@ h3 {
   color: #0066FF;
 }
 
+#landing_page {
+    background-image: url("../img/waterfall.jpeg");
+    background-color: #cccccc;
+}
+
