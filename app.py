@@ -12,6 +12,8 @@ def seed_db():
     [
         {
         'event_name': 'The Blitz',
+        'event_description': 'The Blitz refers to the strategic bombing campaign conducted by the Germans against London and other cities in England from September of 1940 through May of 1941, targeting populated areas, factories and dock yards. The first German attack on London actually occurred by accident.',
+        'event_conclusion': "We hope that you learned something about The Blitz that you didn't know. Come back and see us again.",
         'event_type': 'Historical',
         'created_by': 'Vijay',
         'created_at': '11-12-2014 21:00:00',
