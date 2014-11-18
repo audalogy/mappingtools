@@ -1,6 +1,42 @@
 {% extends "base.html" %}
 {% block content %}
-    {% for event in events %}
-    <div><a href="{{ url_for('present', event_id = event._id) }}">{{ event.event_name }}</a></div>
-    {% endfor %}
+
+    <style type="text/css">
+        html {
+          background: url("../static/img/waterfall.jpeg") no-repeat center center fixed;
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+        }
+    </style>
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="inner cover">
+            <h1 class="cover-heading">Mapping Tools</h1>
+            <p class="lead">Create maps for use on your webpage</p>
+
+            {% for event in events %}
+                <div><a href="{{ url_for('present', event_id = event._id) }}">{{ event.event_name }}</a></div>
+            {% endfor %}
+
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+                <p>Built for IOLab</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
 {% endblock %}
+

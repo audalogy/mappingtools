@@ -1,3 +1,12 @@
+h3 {
+  /*padding-left: 20px;*/
+  color: #0066FF;
+}
+
+h1 {
+    margin: 0px;
+}
+
 #map {
   height: 400px;
   width: 100%;
@@ -16,18 +25,6 @@
 visibility: hidden
 }
 
-#videobcg {
-     position: absolute;
-     top: 0px;
-     left: 0px;
-     min-width: 100%;
-     min-height: 100%;
-     width: auto;
-     height: auto;
-     z-index: -1000;
-     overflow: hidden;
-}
-
 .masthead {
   padding-top: 20px;
   padding-right: 30px; 
@@ -37,13 +34,6 @@ visibility: hidden
   padding-left: 40px;
 }
 
-h3 {
-  padding-left: 20px;
-  color: #0066FF;
+.site-wrapper {
+    text-align: center;
 }
-
-#landing_page {
-    background-image: url("../img/waterfall.jpeg");
-    background-color: #cccccc;
-}
-
