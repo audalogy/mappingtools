@@ -1,3 +1,10 @@
+body {
+    padding: 30px;
+    height: 100%;
+    /* The html and body elements cannot have any padding or margin. */
+    -webkit-font-smoothing: antialiased;
+}
+
 h3 {
   /*padding-left: 20px;*/
   color: #0066FF;
@@ -15,10 +22,6 @@ h1 {
 #events {
   display: inline;
   height: 400px;
-}
-
-#body {
-    padding: 30px;
 }
 
 .hide{
