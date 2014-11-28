@@ -39,15 +39,16 @@ function markupMap(data) {
     iconUrl: '/static/img/Bomb.png',
 
     iconSize:     [30, 30], // size of the icon
-    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+    iconAnchor:   L.Point(22, 94), // point of the icon which will correspond to marker's location
+    popupAnchor:  [-3, -5] // point from which the popup should open relative to the iconAnchor
 });
+
   // on load plot all markers
   for (var i = 0; i < data.length; i++) {
     var latlng = data[i].latlng.split(",");
     var lng = latlng[1];
     var lat = latlng[0];
-    var marker = L.marker([lat, lng]).addTo(map);
+    var marker = L.marker([lat, lng], {icon: bomb_icon}).addTo(map);
 
     var name = "Name: " + data[i].name + "<br />";
     marker.bindPopup(name);
@@ -63,13 +64,14 @@ function markupMap(data) {
   //on click of Next button, go to next order marker
   $('#nextData').on('click', function() {
     if (data.length > 0 && minIndex < data.length-1) {
+      
       minIndex++
       nextIndex = minIndex  
       //find lat and long of next order marker
       var nextlatlng = data[nextIndex].latlng.split(",");
       var nextLng = nextlatlng[1];
       var nextLat = nextlatlng[0];
-      var nextMarker = L.marker([nextLat, nextLng]).addTo(map);
+      var nextMarker = L.marker([nextLat, nextLng],{icon: bomb_icon}).addTo(map);
       //add name 
       var nextName = "Name: " + data[nextIndex].name + "<br />";
       //bind popup
@@ -77,8 +79,9 @@ function markupMap(data) {
       // open popup 
       nextMarker.openPopup(nextLat, nextLng);  
       //zoom to marker
-      map.setView([nextLat, nextLng], 9);  
-    }
+      map.setView([nextLat, nextLng], 8, {animation:true});  
+      //}
+    } 
   });
 
   //on click of Back button, go to last order marker
@@ -86,11 +89,11 @@ function markupMap(data) {
    if (data.length > 0) {
       minIndex--
       backIndex = minIndex  
-    //find lat and long of back order marker
+      //find lat and long of back order marker
       var backlatlng = data[backIndex].latlng.split(",");
       var backLng = backlatlng[1];
       var backLat = backlatlng[0];
-      var backMarker = L.marker([backLat, backLng]).addTo(map);
+      var backMarker = L.marker([backLat, backLng],{icon: bomb_icon}).addTo(map);
       //add name 
       var backName = "Name: " + data[backIndex].name + "<br />";
       //bind popup
@@ -98,7 +101,7 @@ function markupMap(data) {
       //open popup
       backMarker.openPopup(backLat, backLng);
       //zoom to marker
-      map.setView([backLat, backLng], 9);
+      map.setView([backLat, backLng], 8, {animation: true});
     } 
   });
 }
