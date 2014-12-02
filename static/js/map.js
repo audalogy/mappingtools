@@ -11,10 +11,10 @@ $(document).ready(function() {
 
   // Popup Stuff
   var popup = L.popup();
-  getLatestData();
 });
 
-function getLatestData() {
+// Plot all points on page to map
+function plotAllData() {
   var markers = [];
     $(".accordion-group").each(function(ll) {
         marker = {};
@@ -23,9 +23,7 @@ function getLatestData() {
         marker.order = $(this).find(".accordion-body").attr('id');
         markers.push(marker);
     });
-  //console.log("JSON Data: " + JSON.stringify(data[0].marker.length));
   markupMap(markers);
-  // buildTable(data);
 }
 
 function markupMap(data) {
@@ -35,6 +33,12 @@ function markupMap(data) {
   var minIndex = 0;
   //
   // bomb icon
+  var minLong;
+  var minLat;
+  var minOrder = 4;
+  var minMarker;
+  //
+
   var bomb_icon = L.icon({
     iconUrl: '/static/img/Bomb.png',
 
@@ -60,52 +64,4 @@ function markupMap(data) {
     }
     //
   }
-
-  //on click of Next button, go to next order marker
-  $('#nextData').on('click', function() {
-    if (data.length > 0 && minIndex < data.length-1) {
-      
-      minIndex++
-      nextIndex = minIndex  
-      //find lat and long of next order marker
-      var nextlatlng = data[nextIndex].latlng.split(",");
-      var nextLng = nextlatlng[1];
-      var nextLat = nextlatlng[0];
-      var nextMarker = L.marker([nextLat, nextLng],{icon: bomb_icon}).addTo(map);
-      //add name 
-      var nextName = "Name: " + data[nextIndex].name + "<br />";
-      //bind popup
-      nextMarker.bindPopup(nextName);
-      // open popup 
-      nextMarker.openPopup(nextLat, nextLng);  
-      //zoom to marker
-      map.setView([nextLat, nextLng], 8, {animation:true});  
-      //}
-    } 
-  });
-
-  //on click of Back button, go to last order marker
-  $('#backData').on('click', function() {
-   if (data.length > 0) {
-      minIndex--
-      backIndex = minIndex  
-      //find lat and long of back order marker
-      var backlatlng = data[backIndex].latlng.split(",");
-      var backLng = backlatlng[1];
-      var backLat = backlatlng[0];
-      var backMarker = L.marker([backLat, backLng],{icon: bomb_icon}).addTo(map);
-      //add name 
-      var backName = "Name: " + data[backIndex].name + "<br />";
-      //bind popup
-      backMarker.bindPopup(backName);
-      //open popup
-      backMarker.openPopup(backLat, backLng);
-      //zoom to marker
-      map.setView([backLat, backLng], 8, {animation: true});
-    } 
-  });
 }
-
-// Toggle Map Size
-// Need to be animated... Can perhaps be done through css?
-$('.span12, .span10').toggleClass("span10 span12");
