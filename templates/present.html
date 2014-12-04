@@ -1,6 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
 
+    <style type="text/css">
+        html {
+          background: url({{ event.background_url }}) no-repeat center center fixed;
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+        }
+    </style>
+
     <!-- Load modal on default -->
     <script type="text/javascript">
         $(window).load(function(){

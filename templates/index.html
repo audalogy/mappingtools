@@ -13,16 +13,17 @@
 
     <div class="site-wrapper">
 
+      <h1 class="logo">Mapping Tools</h1>
+      <p class="lead">Explore Historical Events</p>
+
       <div class="site-wrapper-inner">
 
         <div class="cover-container">
 
           <div class="inner cover">
-            <h1 class="cover-heading">Mapping Tools</h1>
-            <p class="lead">Create maps for use on your webpage</p>
 
             {% for event in events %}
-                <div><a href="{{ url_for('present', event_id = event._id) }}">{{ event.event_name }}</a></div>
+                <div class="event" style="background: url({{ event.background_url }}) no-repeat center center;"><a href="{{ url_for('present', event_id = event._id) }}">{{ event.event_name }}</a></div>
             {% endfor %}
 
           </div>
