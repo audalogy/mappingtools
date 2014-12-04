@@ -26,7 +26,7 @@ def seed_db():
                     'marker_name': 'First hit of the night to Royal Arsenal ',
                     'marker_type': 'Blue Pin',
                     'marker_order': 1,
-                    'marker_description': '(Owned by H.M War Department) E.50 A building of 2 floors about 300x200 used as workrooms, machine rooms office and store damaged by explosion',
+                    'marker_description': 'The Royal Arsenal was caught up in the Blitz on 7 September 1940 and after several attacks the fuze factory was destroyed and the filling factory and a light gun factory badly damaged. Explosive filling work ceased on the site, but the production of guns, shells, cartridge cases and bombs continued.',
                     'latitude': '54.5608864',
                     'longitude': '-2.2125118',
                     'include_modern_map': 'True',
