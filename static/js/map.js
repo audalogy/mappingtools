@@ -54,7 +54,7 @@ function markupMap(data) {
     var lat = latlng[0];
     var marker = L.marker([lat, lng], {icon: bomb_icon}).addTo(map);
 
-    var name = "Name: " + data[i].name + "<br />";
+    var name = data[i].name + "<br />";
     marker.bindPopup(name);
 
     // if the first element in array, zoom to marker
