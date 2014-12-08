@@ -227,6 +227,10 @@ def data(event_id):
 def create():
     return render_template('create.html')
 
+@app.route('/about')
+def create():
+    return render_template('about.html')
+
 # Laura
 @app.route('/map')
 def map():
