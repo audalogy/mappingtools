@@ -251,6 +251,7 @@ def data(event_id):
 def create():
     return render_template('create.html')
 
+<<<<<<< HEAD
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
@@ -273,6 +274,11 @@ def upload():
     </form>
     <p>%s</p>
     """ % "<br>".join(os.listdir(app.config['UPLOAD_FOLDER'],))
+=======
+@app.route('/about')
+def about():
+    return render_template('about.html')
+>>>>>>> 8f57c4873014f45e8012c9536c034e79890fc4c5
 
 # Laura
 @app.route('/map')
