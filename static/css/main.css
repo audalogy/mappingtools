@@ -62,7 +62,7 @@ visibility: hidden
 
 .event a {
     font-size:50px;
-    color: mediumpurple;
+    color: white;
     text-outline: 2px 2px #ff0000;
     text-transform: uppercase;
     text-align: center;
@@ -70,6 +70,7 @@ visibility: hidden
     line-height: 200px;       /* the same as your div height */
     padding:5px;
     background-color: rgba(255,255,255,0.5);
+    text-shadow: 2px 2px 4px #000000;
 }
 
 .hidden {
