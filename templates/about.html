@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <style type="text/css">
+        html {
+          background: url({{ event.background_url }}) no-repeat center center fixed;
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+        }
+    </style>
+
+    <!-- Load modal on default -->
+    <script type="text/javascript">
+        $(window).load(function(){
+            $('#myModal').modal('show');
+        });
+    </script>
+
+    <!-- Modal -->
+   <div>
+    <p>About this project</p>
+   </div>
+
+    <!-- JS file needs to be after the map div -->
+    <script type="text/javascript" src="../static/js/map.js"></script>
+    <script type="text/javascript" src="../static/js/main.js"></script>
+{% endblock %}
