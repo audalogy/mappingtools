@@ -28,6 +28,12 @@ h1 {
   height: 400px;
 }
 
+.modal-images {
+    padding-top:10px;
+    margin: 0px auto;
+    width: 100%;
+}
+
 .hide{
 visibility: hidden
 }
