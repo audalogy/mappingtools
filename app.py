@@ -228,7 +228,7 @@ def create():
     return render_template('create.html')
 
 @app.route('/about')
-def create():
+def about():
     return render_template('about.html')
 
 # Laura
