@@ -1,11 +1,16 @@
 #!/usr/bin/env python -tt
 
-from flask import Flask, render_template, redirect, jsonify
+from flask import Flask, render_template, redirect, request, url_for
 from flask.ext.pymongo import PyMongo
 from bson.json_util import dumps
+import os
 
 app = Flask(__name__)
 mongo = PyMongo(app)
+
+UPLOAD_FOLDER = './static/event_images/'
+ALLOWED_EXTENSIONS = set(['png', 'jpeg', 'jpg'])
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 def seed_db():
     SEED_DATA = \
@@ -20,6 +25,17 @@ def seed_db():
         'updated_by': 'Vijay',
         'updated_at': '11-13-2014 09:00:00',
         'background_url': '/static/img/blitz.jpg',
+        'event_images':
+            [
+                {
+                    'order':1,
+                    'file_path':'/static/event_images/WWII_London_Blitz_East_London.jpg',
+                },
+                {
+                    'order':2,
+                    'file_path':'/static/event_images/WWII_bombers.jpg',
+                }
+            ],
         'marker':
             [
                 {
@@ -112,6 +128,17 @@ def seed_db():
         'updated_by': 'Vijay',
         'updated_at': '11-13-2014 09:00:00',
         'background_url': '/static/img/alexander.jpg',
+        'event_images':
+            [
+                {
+                    'order':1,
+                    'file_path':'/static/event_images/WWII_London_Blitz_East_London.jpg',
+                },
+                {
+                    'order':2,
+                    'file_path':'/static/event_images/WWII_bombers.jpg',
+                }
+            ],
         'marker':
             [
                 {
@@ -208,9 +235,6 @@ def index():
     return render_template('index.html'
                            , events = mongo.db.app.find())
 
-# @app.route('/authenticate')
-# def authenticate():
-#     return redirect("https://accounts.google.com/o/oauth2/auth", code=302)
 
 @app.route('/present/<ObjectId:event_id>')
 def present(event_id):
@@ -226,6 +250,29 @@ def data(event_id):
 @app.route('/create')
 def create():
     return render_template('create.html')
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
+
+@app.route("/upload", methods=['GET', 'POST'])
+def upload():
+    if request.method == 'POST':
+        file = request.files['file']
+        if file and allowed_file(file.filename):
+            # filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))
+            return redirect(url_for('upload'))
+    return """
+    <!doctype html>
+    <title>Upload new File</title>
+    <h1>Upload new File</h1>
+    <form action="" method=post enctype=multipart/form-data>
+      <p><input type=file name=file>
+         <input type=submit value=Upload>
+    </form>
+    <p>%s</p>
+    """ % "<br>".join(os.listdir(app.config['UPLOAD_FOLDER'],))
 
 # Laura
 @app.route('/map')

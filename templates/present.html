@@ -27,6 +27,11 @@
           </div>
           <div class="modal-body">
             {{ event.event_description }}
+            <div class="modal-images">
+              {% for image in event.event_images %}
+                <img src={{ image.file_path }} height="200" width="200">
+              {% endfor %}
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" data-dismiss="modal">Continue</button>
@@ -67,6 +72,15 @@
                 {% endfor %}
             </div>
         </div>
+    </div>
+
+    <div class="row">
+      <div>
+          <form action="/uploads" method="post" enctype="multipart/form-data">
+            <input type="file" name="file"><br /><br />
+            <input type="submit" value="Upload">
+          </form>
+      </div>
     </div>
 
     <!-- JS file needs to be after the map div -->
