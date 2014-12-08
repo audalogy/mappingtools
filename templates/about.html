@@ -1,11 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
 
-   <div>
-    <h1>About Mapster</h1>
-    <p>Mapster is a web application that allows users to plot custom events on a map and view and experience these events in a narrative story format. Our long-term vision for Mapster is for users to be able to annovate their own maps with events, order these events, save the maps, and playback or view the events in order.</p>
-    <p>So far the tool has two examples of these kinds of events.</p>
-    <p>We built this tool for Information Organization Lab, a graduate class at the School of Information at UC Berkeley in California.</p>
+
+  <div id='background-container'>
+      <img id='background-img' src="../static/img/world.png">
+  </div>
+  <div id='background-overlay'>
+   <div class="span8">  
+    <div>
+      <h1>About Mapster</h1>
+      <div class="description">
+        <p>Mapster is a web application that allows users to plot custom events on a map and view and experience these events in a narrative story format. Our long-term vision for Mapster is for users to be able to annovate their own maps with events, order these events, save the maps, and playback or view the events in order.</p>
+        <p>So far the tool has two examples of these kinds of events.</p>
+        <p>We built this tool for Information Organization Lab, a graduate class at the School of Information at UC Berkeley in California.</p>
+       </div>
+     </div>
+   </div>
    </div>
 
     <!-- JS file needs to be after the map div -->
