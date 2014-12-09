@@ -40,56 +40,49 @@
       </div>
     </div>
 
-    <div class="row">
-        <h3 class="muted">{{ event.event_name }}</h3>
-        <div class="span8">
-            <!-- Container for map -->
-            <div id="map"></div>
-        </div>
-        <div class="span4" id="events">
-            <div class="controls">
-                <ul>
-                    <button class="btn btn-primary" id="backData" >Back</button>
-                    <button class="btn btn-warning" id="nextData" >Next</button>
-                </ul>
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-8">
+                <h3 class="muted">{{ event.event_name }}</h3>
+                <!-- Container for map -->
+                <div id="map"></div>
             </div>
-            <div class="accordion" id="accordion">
-                {% for marker in event.marker %}
-                  <div class="accordion-group">
-                    <div class="accordion-heading">
-                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#{{ marker.marker_order }}">
-                        {{ marker.marker_name }}
-                      </a>
-                    </div>
-                    <div id="{{ marker.marker_order }}" class="accordion-body collapse">
-                      <div class="accordion-inner">
-                        {{ marker.date.start_date }}<br>
-                        <span class="latlong hidden">{{ marker.latitude }}, {{ marker.longitude }}</span>
-                        {{ marker.marker_description }}
-                        <div class="marker-images">
-                          {% for image in marker.marker_images %}
-                            <img src={{ image.file_path }} height="200" width="200">
-                          {% endfor %}
+            <div class="col-md-4" id="events">
+                <div class="controls">
+                    <ul>
+                        <button class="btn btn-primary" id="backData" >Back</button>
+                        <button class="btn btn-warning" id="nextData" >Next</button>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion">
+                    {% for marker in event.marker %}
+                      <div class="accordion-group">
+                        <div class="accordion-heading">
+                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#{{ marker.marker_order }}">
+                            {{ marker.marker_name }}
+                          </a>
                         </div>
-
+                        <div id="{{ marker.marker_order }}" class="accordion-body collapse">
+                          <div class="accordion-inner">
+                            {{ marker.date.start_date }}<br>
+                            <span class="latlong hidden">{{ marker.latitude }}, {{ marker.longitude }}</span>
+                            {{ marker.marker_description }}
+                            <div class="marker-images">
+                              {% for image in marker.marker_images %}
+                                <img src={{ image.file_path }} height="200px" width="200px">
+                              {% endfor %}
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                {% endfor %}
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>
-
-    <div class="row">
-      <div>
-          <form action="/uploads" method="post" enctype="multipart/form-data">
-            <input type="file" name="file"><br /><br />
-            <input type="submit" value="Upload">
-          </form>
-      </div>
-    </div>
-
-    <!-- JS file needs to be after the map div -->
+    <!-- JS files needs to be after the map div -->
     <script type="text/javascript" src="../static/js/map.js"></script>
     <script type="text/javascript" src="../static/js/main.js"></script>
 {% endblock %}
