@@ -6,6 +6,9 @@
     <!-- Bootstrap -->
     <link href="../static/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <script src="../static/js/bootstrap.min.js"></script>
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
     <!-- Leaflet Files -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
@@ -13,17 +16,22 @@
     <script type="text/javascript" src="//nls.tileserver.com/api.js"></script>
     <!-- Site Specific Styles -->
     <link rel="stylesheet" href="../static/css/main.css" />
-    <title>Create a Map</title>
+    <title>Mapster</title>
   </head>
 
   <body>
-    <div class="masthead">
-      <ul class="nav nav-pills pull-right">
-        <li class="active"><a href="{{ url_for('index') }}">Home</a></li>
-        <li><a href="#">Present</a></li>
-        <li><a href="{{ url_for('about') }}">About</a></li>
-      </ul>
+      <div id='topbar'>
+        <div class='topbar-item'>About</div>
+        <div class='topbar-item'>Home</div>
+        <div class='logo-item'>Mapster</div>
     </div>
+{#    <div class="masthead">#}
+{#      <ul class="nav nav-pills pull-right">#}
+{#        <li class="active"><a href="{{ url_for('index') }}">Home</a></li>#}
+{#        <li><a href="#">Present</a></li>#}
+{#        <li><a href="{{ url_for('about') }}">About</a></li>#}
+{#      </ul>#}
+{#    </div>#}
     <div id="body">
       {% block content %}{% endblock %}
     </div>

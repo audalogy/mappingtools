@@ -47,6 +47,17 @@ def seed_db():
                     'longitude': '-2.2125118',
                     'include_modern_map': 'True',
                     'people': [],
+                    'marker_images':
+                        [
+                            {
+                                'order':1,
+                                'file_path':'/static/event_images/royal_arsenal1.jpg',
+                            },
+                            {
+                                'order':2,
+                                'file_path':'/static/event_images/royal_arsenal2.jpg',
+                            }
+                        ],
                     'date':
                         {
                             'date_type': 'datetime',
@@ -176,6 +187,17 @@ def seed_db():
                     'longitude': '-0.003383',
                     'include_modern_map': 'True',
                     'people': [],
+                    'marker_images':
+                        [
+                            {
+                                'order':1,
+                                'file_path':'/static/event_images/royal_arsenal1.jpg',
+                            },
+                            {
+                                'order':2,
+                                'file_path':'/static/event_images/royal_arsenal2.jpg',
+                            }
+                        ],
                     'date':
                         {
                             'date_type': 'datetime range',
@@ -194,7 +216,7 @@ def seed_db():
                         }
                 },
                 {
-                   'marker_name': 'BBC Braodcasting House',
+                   'marker_name': 'BBC Broadcasting House',
                    'marker_type': 'Blue Pin',
                    'marker_order': 2,
                    'marker_description': 'The BBC Broadcasting House was bombed during an evening broadcast. Radio announcer Bruce Belfrage, paused briefly as the bomb went off and then continued reading the evening news. This was one of several direct hits to the building during the Blitz.',

@@ -2,12 +2,12 @@
 
 }
 
-body {
-    padding: 30px;
-    height: 100%;
+/*body {*/
+    /*padding: 30px;*/
+    /*height: 100%;*/
     /* The html and body elements cannot have any padding or margin. */
-    -webkit-font-smoothing: antialiased;
-}
+    /*-webkit-font-smoothing: antialiased;*/
+/*}*/
 
 h3 {
   /*padding-left: 20px;*/
@@ -29,6 +29,12 @@ h1 {
 }
 
 .modal-images {
+    padding-top:10px;
+    margin: 0px auto;
+    width: 100%;
+}
+
+.marker-images {
     padding-top:10px;
     margin: 0px auto;
     width: 100%;
@@ -86,4 +92,32 @@ visibility: hidden
 
 .mastfoot {
   text-align: center;
+}
+
+#topbar {
+    background-color: white;
+    color: white;
+    width:100%;
+    height:7%;
+    position: fixed;
+    top: 0%;
+    z-index: 999;
+    margin: 0px;
+    font-family: roboto;
+}
+.topbar-item {
+    display: inline-block;
+    float: right;
+    margin-right: 48px;
+    margin-top: 16px;
+    cursor: pointer;
+    color: black;
+    font-family: roboto;
+}
+.logo-item {
+    font-size:36px;
+    color: black;
+    font-family:indie flower;
+    float: left;
+    margin-left: 12px;
 }

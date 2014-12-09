@@ -66,6 +66,12 @@
                         {{ marker.date.start_date }}<br>
                         <span class="latlong hidden">{{ marker.latitude }}, {{ marker.longitude }}</span>
                         {{ marker.marker_description }}
+                        <div class="marker-images">
+                          {% for image in marker.marker_images %}
+                            <img src={{ image.file_path }} height="200" width="200">
+                          {% endfor %}
+                        </div>
+
                       </div>
                     </div>
                   </div>
