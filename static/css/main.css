@@ -77,12 +77,41 @@ visibility: hidden
     color: white;
     text-outline: 2px 2px #ff0000;
     text-transform: uppercase;
-    text-align: center;
+    text-align: left;
     vertical-align: middle;
     line-height: 200px;       /* the same as your div height */
     padding:5px;
     background-color: rgba(255,255,255,0.5);
     text-shadow: 2px 2px 4px #000000;
+}
+
+#event-cover {
+    background-image:url({{event.background_url}});
+    display:block;
+    height:200px;
+    padding-top:7px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.alignleft {
+  float: left;
+  width:33.33333%;
+  text-align:left;
+}
+
+.aligncenter {
+  float: left;
+  width:33.33333%;
+  text-align:center;
+}
+
+.alignright {
+ float: left;
+ width:33.33333%;
+ text-align:right;
 }
 
 .hidden {
@@ -119,5 +148,6 @@ visibility: hidden
     color: black;
     font-family:indie flower;
     float: left;
-    margin-left: 12px;
+    margin-left: 24px;
+    margin-top: 16px;
 }
