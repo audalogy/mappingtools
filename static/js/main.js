@@ -14,7 +14,7 @@ $(window).resize(function() {
 
 // Accordion control
 // Back Button
-$('.controls .glyphicon-chevron-left').click(function(){
+$('.controls #prev').click(function(){
   var active_element = $(".accordion-group").find(".in");
   if(!active_element){
     var active_element = $(".accordion-group")[0].find(".accordion-body");
@@ -24,7 +24,7 @@ $('.controls .glyphicon-chevron-left').click(function(){
 });
 
 // Forward Button
-$('.controls .glyphicon-chevron-right').click(function(){
+$('.controls #next').click(function(){
   if($(".accordion-group").find(".in").length != 0) {
       var active_element = $(".accordion-group").find(".in");
       active_element.removeClass("in");
