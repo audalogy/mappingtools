@@ -22,9 +22,9 @@
 
   <body>
       <div id='topbar'>
-        <div class='topbar-item' href="{{ url_for('about') }}">About</div>
-        <div class='topbar-item' >Home</div>
-        <div class='logo-item' href="{{ url_for('index') }}">Mapster</div>
+        <div class='topbar-item'><a href="{{ url_for('about') }}">About</a></div>
+        <div class='topbar-item'><a href="{{ url_for('index') }}">Home</a></div>
+        <div class='logo-item'><a href="{{ url_for('index') }}">Mapster</a></div>
     </div>
     <div id="body">
       {% block content %}{% endblock %}
