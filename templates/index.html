@@ -2,17 +2,11 @@
 {% block content %}
 
     <div class="site-wrapper">
-    
       <p class="lead">Explore Historical Events</p>
-
       <div class="site-wrapper-inner">
-
         <div class="cover-container">
-
           <div class="inner cover">
-
             {% for event in events %}
-
               <div class="event">
                   <a href="{{ url_for('present', event_id = event._id) }}" title="Event Cover Image" id="event-cover" style="background: url({{ event.background_url }}) no-repeat center center;">{{ event.event_name }}</a>
                   <div class="alignright"> Created by: {{event.created_by}} </div>
@@ -20,22 +14,16 @@
                   <div class="alignleft"> Tags: Historical </div>
               </div>
               <br>
-
               <br>
             {% endfor %}
-
           </div>
-
           <div class="mastfoot">
             <div class="inner">
                 <p>Built for IOLab</p>
             </div>
           </div>
-
         </div>
-
       </div>
-
     </div>
 {% endblock %}
 
