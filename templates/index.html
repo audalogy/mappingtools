@@ -8,7 +8,11 @@
           <div class="inner cover">
             {% for event in events %}
               <div class="event">
-                  <a href="{{ url_for('present', event_id = event._id) }}" title="Event Cover Image" id="event-cover" style="background: url({{ event.background_url }}) no-repeat center center;">{{ event.event_name }}</a>
+                  <a href="{{ url_for('present', event_id = event._id) }}"
+                     title="Event Cover Image"
+                     id="event-cover" style="background: url({{ event.background_url }}) no-repeat center center;">
+                      {{ event.event_name }}
+                  </a>
                   <div class="alignright"> Created by: {{event.created_by}} </div>
                   <div class="aligncenter"> Created on: {{event.created_at}} </div>
                   <div class="alignleft"> Tags: Historical </div>
