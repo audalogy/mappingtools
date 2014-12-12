@@ -4,197 +4,9 @@ def seed():
     SEED_DATA = \
     [
         {
-        'event_name': 'The Blitz',
-        'event_description': 'The Blitz refers to the strategic bombing campaign conducted by the Germans against London and other cities in England from September of 1940 through May of 1941, targeting populated areas, factories and dock yards.',
-        'event_conclusion': "We hope that you learned something about The Blitz that you didn't know. Come back and see us again.",
-        'event_type': 'Historical',
-        'created_by': 'Vijay',
-        'created_at': datetime.datetime.utcnow(),
-        'updated_by': 'Vijay',
-        'updated_at': datetime.datetime.utcnow(),
-        'background_url': '/static/img/blitz.jpg',
-        'event_images':
-            [
-                {
-                    'order':1,
-                    'file_path':'/static/event_images/WWII_London_Blitz_East_London.jpg',
-                },
-                {
-                    'order':2,
-                    'file_path':'/static/event_images/WWII_bombers.jpg',
-                }
-            ],
-        'marker':
-            [
-                {
-                    'marker_name': 'First bomb of the first night of the blitz',
-                    'marker_type': 'Blue Pin',
-                    'marker_order': 1,
-                    'marker_description': 'Grocers: 3x2 roof damaged.',
-                    'latitude': '51.4934804',
-                    'longitude': '-0.0576837',
-                    'include_modern_map': 'True',
-                    'people': [],
-                    'marker_images':
-                        [
-                            {
-                                'order':1,
-                                'file_path':'/static/event_images/royal_arsenal1.jpg',
-                            },
-                            {
-                                'order':2,
-                                'file_path':'/static/event_images/royal_arsenal2.jpg',
-                            }
-                        ],
-                    'date':
-                        {
-                            'date_type': 'datetime',
-                            'start_date': '09-07-1940 0:08',
-                            'end_date': ''
-                        },
-                    'image':
-                        {
-                            'file_name': '',
-                            'caption': ''
-                        },
-                    'audio':
-                        {
-                            'file_name': '',
-                            'caption': ''
-                        }
-                },
-                {
-                    'marker_name': 'First hit of the night to Royal Arsenal ',
-                    'marker_type': 'Blue Pin',
-                    'marker_order': 2,
-                    'marker_description': 'The Royal Arsenal was caught up in the Blitz on 7 September 1940 and after several attacks the fuze factory was destroyed and the filling factory and a light gun factory badly damaged. Explosive filling work ceased on the site, but the production of guns, shells, cartridge cases and bombs continued.',
-                    'latitude': '54.5608864',
-                    'longitude': '-2.2125118',
-                    'include_modern_map': 'True',
-                    'people': [],
-                    'marker_images':
-                        [
-                            {
-                                'order':1,
-                                'file_path':'/static/event_images/royal_arsenal1.jpg',
-                            },
-                            {
-                                'order':2,
-                                'file_path':'/static/event_images/royal_arsenal2.jpg',
-                            }
-                        ],
-                    'date':
-                        {
-                            'date_type': 'datetime',
-                            'start_date': '09-07-1940 14:55:00',
-                            'end_date': ''
-                        },
-                    'image':
-                        {
-                            'file_name': '',
-                            'caption': ''
-                        },
-                    'audio':
-                        {
-                            'file_name': '',
-                            'caption': ''
-                        }
-                },
-                {
-                    'marker_name': 'First bomb dropped on the royal docks in the harbor during the blitz',
-                    'marker_type': 'Blue Pin',
-                    'marker_order': 3,
-                    'marker_description': 'HM War Dept. Block 47- A building og three floors about 250 x 80 used as store and contents damaged.',
-                    'latitude': '51.51396',
-                    'longitude': '-0.003383',
-                    'include_modern_map': 'True',
-                    'people': [],
-                    'marker_images':
-                        [
-                            {
-                                'order':1,
-                                'file_path':'/static/event_images/royal_arsenal1.jpg',
-                            },
-                            {
-                                'order':2,
-                                'file_path':'/static/event_images/royal_arsenal2.jpg',
-                            }
-                        ],
-                    'date':
-                        {
-                            'date_type': 'datetime',
-                            'start_date': '09-07-1940 14:55:00',
-                            'end_date': ''
-                        },
-                    'image':
-                        {
-                            'file_name': '',
-                            'caption': ''
-                        },
-                    'audio':
-                        {
-                            'file_name': '',
-                            'caption': ''
-                        }
-                },
-                {
-                    'marker_name': 'Last bomb on the first night of the blitz',
-                    'marker_type': 'Blue Pin',
-                    'marker_order': 4,
-                    'marker_description': '57 buildings damaged by explosion. 4 persons severely injured, extricated by the Brigade and removed to hospital.',
-                    'latitude': '51.51396',
-                    'longitude': '-0.003383',
-                    'include_modern_map': 'True',
-                    'people': [],
-                    'date':
-                        {
-                            'date_type': 'datetime range',
-                            'start_date': '09-07-1940 23:59:00',
-                            'end_date': '09-07-1940 24:00:00'
-                        },
-                    'image':
-                        {
-                            'file_name': '',
-                            'caption': ''
-                        },
-                    'audio':
-                        {
-                            'file_name': '',
-                            'caption': ''
-                        }
-                },
-                {
-                   'marker_name': 'BBC Broadcasting House',
-                   'marker_type': 'Blue Pin',
-                   'marker_order': 4,
-                   'marker_description': 'The BBC Broadcasting House was bombed during an evening broadcast. Radio announcer Bruce Belfrage, paused briefly as the bomb went off and then continued reading the evening news. This was one of several direct hits to the building during the Blitz.',
-                   'latitude': '51.518571',
-                   'longitude': '-0.143811',
-                   'include_modern_map': 'True',
-                   'people': ['Bruce Belfrage'],
-                   'date':
-                       {
-                           'date_type': 'datetime',
-                           'start_date': '10-14-1940 20:00:00',
-                           'end_date': ''
-                       },
-                   'image':
-                       {
-                           'file_name': '',
-                           'caption': ''
-                       },
-                   'audio':
-                       {
-                           'file_name': '',
-                           'caption': ''
-                       }
-                }
-            ]
-        },
-        {
         'event_name': 'Alexander\'s Conquests',
-        'event_description': 'The Blitz refers to the strategic bombing campaign conducted by the Germans against London and other cities in England from September of 1940 through May of 1941, targeting populated areas, factories and dock yards. The first German attack on London actually occurred by accident.',
-        'event_conclusion': "We hope that you learned something about The Blitz that you didn't know. Come back and see us again.",
+        'event_description': 'Explore Alexander of Macedon\'s conquests through the Middle East and Asia.',
+        'event_conclusion': "Come back and see us again.",
         'event_type': 'Historical',
         'created_by': 'Laura',
         'created_at': datetime.datetime.utcnow(),
@@ -214,7 +26,7 @@ def seed():
                     'marker_name': 'Alexander comes to power',
                     'marker_type': 'Blue Pin',
                     'marker_order': 1,
-                    'marker_description': "Alexander's father, Philip II, is assinated and after a brief question of succession, Alexander takes control of Macedon at age 20. He executes family members he thinks may pose threats to his rule.",
+                    'marker_description': "Alexander's father, Philip II, is assasinated and after a brief question of succession, Alexander takes control of Macedon at age 20. He executes family members he thinks may pose threats to his rule.",
                     'latitude': '40.761483',
                     'longitude': '22.525763',
                     'include_modern_map': 'True',
@@ -261,9 +73,9 @@ def seed():
                         ],
                     'date':
                         {
-                            'date_type': 'datetime range',
-                            'start_date': '09-07-1940 23:59:00',
-                            'end_date': '09-07-1940 24:00:00'
+                            'date_type': 'date',
+                            'start_date': '332 BCE',
+                            'end_date': ''
                         },
                     'image':
                         {
@@ -287,20 +99,12 @@ def seed():
                     'people': [],
                     'marker_images':
                         [
-                            {
-                                'order':1,
-                                'file_path':'/static/event_images/royal_arsenal1.jpg',
-                            },
-                            {
-                                'order':2,
-                                'file_path':'/static/event_images/royal_arsenal2.jpg',
-                            }
                         ],
                     'date':
                         {
-                            'date_type': 'datetime range',
-                            'start_date': '09-07-1940 23:59:00',
-                            'end_date': '09-07-1940 24:00:00'
+                            'date_type': 'date',
+                            'start_date': '332 BCE',
+                            'end_date': ''
                         },
                     'image':
                         {
@@ -324,20 +128,12 @@ def seed():
                     'people': [],
                     'marker_images':
                         [
-                            {
-                                'order':1,
-                                'file_path':'/static/event_images/royal_arsenal1.jpg',
-                            },
-                            {
-                                'order':2,
-                                'file_path':'/static/event_images/royal_arsenal2.jpg',
-                            }
                         ],
                     'date':
                         {
-                            'date_type': 'datetime range',
-                            'start_date': '09-07-1940 23:59:00',
-                            'end_date': '09-07-1940 24:00:00'
+                            'date_type': 'date',
+                            'start_date': '331 BCE',
+                            'end_date': ''
                         },
                     'image':
                         {
@@ -368,9 +164,9 @@ def seed():
                         ],
                     'date':
                         {
-                            'date_type': 'datetime range',
-                            'start_date': '09-07-1940 23:59:00',
-                            'end_date': '09-07-1940 24:00:00'
+                            'date_type': 'date',
+                            'start_date': '324 BCE',
+                            'end_date': ''
                         },
                     'image':
                         {
@@ -402,8 +198,8 @@ def seed():
                     'date':
                         {
                             'date_type': 'datetime range',
-                            'start_date': '09-07-1940 23:59:00',
-                            'end_date': '09-07-1940 24:00:00'
+                            'start_date': '323 BCE',
+                            'end_date': ''
                         },
                     'image':
                         {
@@ -416,6 +212,163 @@ def seed():
                             'caption': ''
                         }
                 },
+            ]
+        },
+        {
+        'event_name': 'The Blitz',
+        'event_description': 'The Blitz refers to the strategic bombing campaign conducted by the Germans against London and other cities in England from September of 1940 through May of 1941, targeting populated areas, factories and dock yards.',
+        'event_conclusion': "We hope that you learned something about The Blitz that you didn't know. Come back and see us again.",
+        'event_type': 'Historical',
+        'created_by': 'Vijay',
+        'created_at': datetime.datetime.utcnow(),
+        'updated_by': 'Vijay',
+        'updated_at': datetime.datetime.utcnow(),
+        'background_url': '/static/img/blitz.jpg',
+        'event_images':
+            [
+                {
+                    'order':1,
+                    'file_path':'/static/event_images/WWII_London_Blitz_East_London.jpg',
+                },
+                {
+                    'order':2,
+                    'file_path':'/static/event_images/WWII_bombers.jpg',
+                }
+            ],
+        'marker':
+            [
+                {
+                    'marker_name': 'First bomb of the first night of the blitz',
+                    'marker_type': 'Blue Pin',
+                    'marker_order': 1,
+                    'marker_description': 'Grocers: 3x2 roof damaged.',
+                    'latitude': '51.4934804',
+                    'longitude': '-0.0576837',
+                    'include_modern_map': 'True',
+                    'people': [],
+                    'marker_images':
+                        [
+                        ],
+                    'date':
+                        {
+                            'date_type': 'datetime',
+                            'start_date': '09-07-1940 0:08',
+                            'end_date': ''
+                        },
+                    'audio':
+                        {
+                            'file_name': '',
+                            'caption': ''
+                        }
+                },
+                {
+                    'marker_name': 'First hit of the night to Royal Arsenal ',
+                    'marker_type': 'Blue Pin',
+                    'marker_order': 2,
+                    'marker_description': 'The Royal Arsenal was caught up in the Blitz on 7 September 1940 and after several attacks the fuze factory was destroyed and the filling factory and a light gun factory badly damaged. Explosive filling work ceased on the site, but the production of guns, shells, cartridge cases and bombs continued.',
+                    'latitude': '54.5608864',
+                    'longitude': '-2.2125118',
+                    'include_modern_map': 'True',
+                    'people': [],
+                    'marker_images':
+                        [
+                            {
+                                'order':1,
+                                'file_path':'/static/event_images/royal_arsenal1.jpg',
+                            },
+                            {
+                                'order':2,
+                                'file_path':'/static/event_images/royal_arsenal2.jpg',
+                            }
+                        ],
+                    'date':
+                        {
+                            'date_type': 'datetime',
+                            'start_date': '09-07-1940 14:55:00',
+                            'end_date': ''
+                        },
+                    'audio':
+                        {
+                            'file_name': '',
+                            'caption': ''
+                        }
+                },
+                {
+                    'marker_name': 'First bomb dropped on the royal docks in the harbor during the blitz',
+                    'marker_type': 'Blue Pin',
+                    'marker_order': 3,
+                    'marker_description': 'HM War Dept. Block 47- A building og three floors about 250 x 80 used as store and contents damaged.',
+                    'latitude': '51.51396',
+                    'longitude': '-0.003383',
+                    'include_modern_map': 'True',
+                    'people': [],
+                    'marker_images':
+                        [
+
+                        ],
+                    'date':
+                        {
+                            'date_type': 'datetime',
+                            'start_date': '09-07-1940 14:55:00',
+                            'end_date': ''
+                        },
+                    'audio':
+                        {
+                            'file_name': '',
+                            'caption': ''
+                        }
+                },
+                {
+                    'marker_name': 'Last bomb on the first night of the blitz',
+                    'marker_type': 'Blue Pin',
+                    'marker_order': 4,
+                    'marker_description': '57 buildings damaged by explosion. 4 persons severely injured, extricated by the Brigade and removed to hospital.',
+                    'latitude': '51.51396',
+                    'longitude': '-0.003383',
+                    'include_modern_map': 'True',
+                    'people': [],
+                    'date':
+                        {
+                            'date_type': 'datetime range',
+                            'start_date': '09-07-1940 23:59:00',
+                            'end_date': '09-07-1940 24:00:00'
+                        },
+                    'audio':
+                        {
+                            'file_name': '',
+                            'caption': ''
+                        }
+                },
+                {
+                   'marker_name': 'BBC Broadcasting House',
+                   'marker_type': 'Blue Pin',
+                   'marker_order': 4,
+                   'marker_description': 'The BBC Broadcasting House was bombed during an evening broadcast. Radio announcer Bruce Belfrage, paused briefly as the bomb went off and then continued reading the evening news. This was one of several direct hits to the building during the Blitz.',
+                   'latitude': '51.518571',
+                   'longitude': '-0.143811',
+                   'include_modern_map': 'True',
+                   'people': ['Bruce Belfrage'],
+                    'marker_images':
+                        [
+
+                        ],
+                   'date':
+                       {
+                           'date_type': 'datetime',
+                           'start_date': '10-14-1940 20:00:00',
+                           'end_date': ''
+                       },
+                   'image':
+                       {
+                           'file_name': '',
+                           'caption': ''
+                       },
+                   'audio':
+                       {
+                           'file_name': '',
+                           'caption': ''
+                       }
+                }
             ]
         }
     ]
