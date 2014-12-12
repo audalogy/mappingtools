@@ -1,7 +1,3 @@
-body {
-
-}
-
 h3 {
   /*padding-left: 20px;*/
   color: #0066FF;
@@ -14,6 +10,7 @@ h1 {
 .container {
     padding-top:20px;
 }
+
 /*Nav Bar*/
 
 #topbar {
@@ -123,6 +120,21 @@ visibility: hidden
     background-size: cover;
 }
 
+#background-container {
+  background-image: url("img/world.png");
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+.description {
+  position: absolute; 
+  top: 80px; 
+  font-size: 12pt; 
+  color: #ffffff;
+  text-shadow: 2px 2px 4px #000000;
+
+}
+
 .alignleft {
   float: left;
   width:33.33333%;
@@ -148,5 +160,5 @@ visibility: hidden
 
 .mastfoot {
   text-align: center;
-  font-size: 7px;
+  font-size: 12px;
 }
