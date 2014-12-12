@@ -31,8 +31,17 @@ $('.controls #next').click(function(){
       active_element.parent().next().find(".accordion-body").addClass("in");
   }
     else {
-        $(".accordion-group").find(".accordion-body").addClass("in");
+      $(".accordion-group").first().find(".accordion-body").addClass("in");
   }
+});
+
+// Play button
+$('.controls #play').click(function() {
+    // Toggle Map Size
+    // Need to be animated... Can perhaps be done through css?
+    setTimeout($('.col-md-8, .col-md-2').toggleClass("col-md-8 col-md-2"), 4000)
+//    $('.col-md-8, .col-md-2').toggleClass("col-md-8 col-md-2");
+
 });
 
 // Helper function to add visible markers to map
@@ -66,7 +75,3 @@ observer.observe($('.accordion')[0], {
       attributes: true
       //...
 });
-
-// Toggle Map Size
-// Need to be animated... Can perhaps be done through css?
-$('.col-md-8, .col-md-2').toggleClass("col-md-8 col-md-2");
