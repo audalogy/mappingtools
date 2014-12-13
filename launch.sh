@@ -16,6 +16,6 @@ fi
 echo "starting mongodb instance"
 echo "ensure you use the shutoff script provided after you are finished"
 
-mongod --dbpath ./db > mongo.out &
+mongod --dbpath ./db > logs/mongo.out &
 
-python app.py > server.out &
+python app.py > logs/server.out &
