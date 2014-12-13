@@ -30,6 +30,7 @@ def seed():
                     'latitude': '40.761483',
                     'longitude': '22.525763',
                     'include_modern_map': 'True',
+                    'timer_duration': 8,
                     'people': [],
                     'marker_images':
                         [
@@ -63,6 +64,7 @@ def seed():
                     'latitude': '36.621514',
                     'longitude': '36.265418',
                     'include_modern_map': 'True',
+                    'timer_duration': 8,
                     'people': [],
                     'marker_images':
                         [
@@ -96,6 +98,7 @@ def seed():
                     'latitude': '31.504504',
                     'longitude': '34.465431',
                     'include_modern_map': 'True',
+                    'timer_duration': 8,
                     'people': [],
                     'marker_images':
                         [
@@ -125,6 +128,7 @@ def seed():
                     'latitude': '36.346574',
                     'longitude': '43.127008',
                     'include_modern_map': 'True',
+                    'timer_duration': 8,
                     'people': [],
                     'marker_images':
                         [
@@ -154,6 +158,7 @@ def seed():
                     'latitude': '31.565086',
                     'longitude': '74.977058',
                     'include_modern_map': 'True',
+                    'timer_duration': 8,
                     'people': [],
                     'marker_images':
                         [
@@ -187,6 +192,7 @@ def seed():
                     'latitude': '32.482245',
                     'longitude': '44.432813',
                     'include_modern_map': 'True',
+                    'timer_duration': 8,
                     'people': [],
                     'marker_images':
                         [
@@ -245,6 +251,7 @@ def seed():
                     'latitude': '51.4934804',
                     'longitude': '-0.0576837',
                     'include_modern_map': 'True',
+                    'timer_duration': 5,
                     'people': [],
                     'marker_images':
                         [
@@ -269,6 +276,7 @@ def seed():
                     'latitude': '54.5608864',
                     'longitude': '-2.2125118',
                     'include_modern_map': 'True',
+                    'timer_duration': 8,
                     'people': [],
                     'marker_images':
                         [
@@ -301,6 +309,7 @@ def seed():
                     'latitude': '51.51396',
                     'longitude': '-0.003383',
                     'include_modern_map': 'True',
+                    'timer_duration': 8,
                     'people': [],
                     'marker_images':
                         [
@@ -326,6 +335,7 @@ def seed():
                     'latitude': '51.51396',
                     'longitude': '-0.003383',
                     'include_modern_map': 'True',
+                    'timer_duration': 8,
                     'people': [],
                     'date':
                         {
@@ -347,6 +357,7 @@ def seed():
                    'latitude': '51.518571',
                    'longitude': '-0.143811',
                    'include_modern_map': 'True',
+                    'timer_duration': 8,
                    'people': ['Bruce Belfrage'],
                     'marker_images':
                         [
