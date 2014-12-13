@@ -1,4 +1,12 @@
 import datetime
+from pymongo import MongoClient
+
+client = MongoClient('mongodb://mapster:iolab2014@ds061200.mongolab.com:61200/heroku_app31316186')
+mongo = client.get_default_database()
+
+def seed_db():
+    mongo.db.app.drop()
+    mongo.app.insert(seed())
 
 def seed():
     SEED_DATA = \
@@ -384,3 +392,6 @@ def seed():
         }
     ]
     return SEED_DATA
+
+if __name__ == "__main__":
+    seed_db()

@@ -1,47 +1,42 @@
 #!/usr/bin/env python -tt
 
 from flask import Flask, render_template, redirect, request, url_for
-from flask.ext.pymongo import PyMongo
 from bson.json_util import dumps
+import bson
 import os
-from data import seed
+from pymongo import MongoClient
 
 app = Flask(__name__)
-mongo = PyMongo(app)
-
-UPLOAD_FOLDER = './static/event_images/'
-ALLOWED_EXTENSIONS = set(['png', 'jpeg', 'jpg'])
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-
-def seed_db():
-    mongo.db.app.insert(seed())
+client = MongoClient('mongodb://mapster:iolab2014@ds061200.mongolab.com:61200/heroku_app31316186')
+mongo = client.get_default_database()
 
 @app.route('/')
 @app.route('/index')
 def index():
-    mongo.db.app.drop()
-
-    if 'events' not in mongo.db.collection_names():
-        seed_db()
-
     return render_template('index.html'
-                           , events = mongo.db.app.find())
+                           , events = mongo.app.find())
 
-
-@app.route('/present/<ObjectId:event_id>')
-def present(event_id):
-    event = mongo.db.app.find_one_or_404(event_id)
+@app.route('/present')
+def present():
+    event_id = request.args.get('event_id')
+    print event_id
+    event = mongo.app.find_one({'_id':bson.ObjectId(oid=str(event_id))})
     return render_template('present.html'
                            , event = event)
 
-@app.route('/data/<ObjectId:event_id>')
+@app.route('/data')
 def data(event_id):
-    event = mongo.db.app.find_one_or_404(event_id)
+    event_id = request.args.get('event_id')
+    event = mongo.app.find_one({'_id':bson.ObjectId(oid=str(event_id))})
     return dumps(event)
 
 @app.route('/create')
 def create():
     return render_template('create.html')
+
+UPLOAD_FOLDER = './static/event_images/'
+ALLOWED_EXTENSIONS = set(['png', 'jpeg', 'jpg'])
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 def allowed_file(filename):
     return '.' in filename and \
