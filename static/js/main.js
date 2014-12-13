@@ -13,19 +13,19 @@ $(window).resize(function() {
 });
 
 // Accordion control
-// Back Button
-$('.controls #prev').click(function(){
-  var active_element = $(".accordion-group").find(".in");
-  if(!active_element){
-    var active_element = $(".accordion-group")[0].find(".accordion-body");
-  }
-  active_element.removeClass("in");
-  active_element.parent().prev().find(".accordion-body").addClass("in");
-});
 
 // Forward Button
 $('.controls #next').click(function(){
-  if($(".accordion-group").find(".in").length != 0) {
+    next()
+});
+
+// Back Button
+$('.controls #prev').click(function(){
+    prev()
+});
+
+function next(){
+    if($(".accordion-group").find(".in").length != 0) {
       var active_element = $(".accordion-group").find(".in");
       active_element.removeClass("in");
       active_element.parent().next().find(".accordion-body").addClass("in");
@@ -33,15 +33,35 @@ $('.controls #next').click(function(){
     else {
       $(".accordion-group").first().find(".accordion-body").addClass("in");
   }
-});
 
+}
+
+function prev(){
+  var active_element = $(".accordion-group").find(".in");
+  if(!active_element){
+    var active_element = $(".accordion-group")[0].find(".accordion-body");
+  }
+  active_element.removeClass("in");
+  active_element.parent().prev().find(".accordion-body").addClass("in");
+}
+
+
+var interval_id = ''
 // Play button
 $('.controls #play').click(function() {
     // Toggle Map Size
     // Need to be animated... Can perhaps be done through css?
-    setTimeout($('.col-md-8, .col-md-2').toggleClass("col-md-8 col-md-2"), 4000)
-//    $('.col-md-8, .col-md-2').toggleClass("col-md-8 col-md-2");
+//    setTimeout($('.col-md-8, .col-md-2').toggleClass("col-md-8 col-md-2"), 4000)
+//    $('.col-md-8').removeClass('col-md-8').addClass('col-md-3');
+//    $('#events').removeClass('col-md-4').addClass('col-md-9');
+    next()
+    var timeout = parseInt($('.accordion .in').find(".timerDuration").text()) * 1000;
+    interval_id = setInterval(next, timeout);
+});
 
+//Stop button
+$('.controls #stop').click(function() {
+    clearInterval(interval_id);
 });
 
 // Helper function to add visible markers to map

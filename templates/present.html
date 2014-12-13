@@ -60,6 +60,9 @@
                         <button type="button" class="btn btn-primary" aria-label="Left Align" id="play">
                             <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
                         </button>
+                        <button type="button" class="btn btn-danger" aria-label="Left Align" id="stop">
+                            <span class="glyphicon glyphicon-stop" aria-hidden="true"></span>
+                        </button>
                     </ul>
                 </div>
                 <div class="accordion" id="accordion">
@@ -74,6 +77,7 @@
                           <div class="accordion-inner">
                             {{ marker.date.start_date }}<br>
                             <span class="latlong hidden">{{ marker.latitude }}, {{ marker.longitude }}</span>
+                            <span class="timerDuration hidden">{{ marker.timer_duration }}</span>
                             {{ marker.marker_description }}
                             <div class="marker-images">
                               {% for image in marker.marker_images %}
