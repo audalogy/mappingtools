@@ -16,10 +16,16 @@ def index():
     return render_template('index.html'
                            , events = mongo.app.find())
 
+@app.route('/page')
+def page():
+    event_id = request.args.get('event_id')
+    event = mongo.app.find_one({'_id':bson.ObjectId(oid=str(event_id))})
+    return render_template('page.html'
+                            , event = event)
+
 @app.route('/present')
 def present():
     event_id = request.args.get('event_id')
-    print event_id
     event = mongo.app.find_one({'_id':bson.ObjectId(oid=str(event_id))})
     return render_template('present.html'
                            , event = event)

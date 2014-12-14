@@ -11,6 +11,23 @@ h1 {
     padding-top:20px;
 }
 
+.section{
+	text-align: center;
+}
+
+
+.marker_name {
+
+}
+
+.marker_dates {
+
+}
+
+.marker_description {
+
+}
+
 /*Nav Bar*/
 
 #topbar {
@@ -40,16 +57,6 @@ h1 {
     margin-right: 48px;
     cursor: pointer;
     color: black;
-}
-
-#map {
-  height: 400px;
-  width: 100%;
-}
-
-#events {
-  display: inline;
-  height: 400px;
 }
 
 .modal-images {
