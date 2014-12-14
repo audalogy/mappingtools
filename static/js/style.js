@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $('#pagepiling').pagepiling({
-        sectionsColor: ['white', '#ee005a', '#2C3E50', '#39C', 'azure'],
+        sectionsColor: ['white', '#FAD4D8', '#B4CEB3', '#C47AC0', 'azure', '#EAD7D1'],
         afterRender: function(){
         setMapView($('.active').find('.map').attr('id'));
         mapCurrentMarker()
